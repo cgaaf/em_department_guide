@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'constants.dart';
 import 'screens/app_navigation_screen.dart';
 
 void main() => runApp(MyApp());
@@ -11,9 +12,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primaryColor: Color(0xffD02565),
+        primaryColor: kPrimaryColor,
       ),
-      home: AppNavigationBar(),
+      home: SafeArea(child: AppNavigationBar()),
     );
   }
 }

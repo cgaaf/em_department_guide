@@ -1,5 +1,5 @@
 const cardiologyAgreement = """
-## Admission to Cardiology
+# Admission to Cardiology
 * Chest pain with HEART score ≥ 7
 * STEMI
 * NSTEMI with persistent symptoms
@@ -8,7 +8,7 @@ const cardiologyAgreement = """
 * Complete heart block
 * Post-cardiac procedure
   
-## Admission to Hospitalist
+# Admission to Hospitalist
 * Chest pain with HEART score 4-6
 * Asymptomatic NSTEMI
 * Acute CHF exacerbations

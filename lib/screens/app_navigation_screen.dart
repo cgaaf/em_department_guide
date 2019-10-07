@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../prototypes/flowchart_screen.dart';
 import 'admission_agreements_screen.dart';
 import 'phone_number_screen.dart';
 
@@ -23,13 +24,7 @@ class _AppNavigationBarState extends State<AppNavigationBar> {
   List<BottomNavigationRoute> _bottomNavigationRoutes = <BottomNavigationRoute>[
     BottomNavigationRoute(screenRoute: PhoneNumberScreen()),
     BottomNavigationRoute(
-      screenRoute: Center(
-        child: Text(
-          'Future Protocol\'s Screen',
-          textAlign: TextAlign.center,
-          style: optionStyle,
-        ),
-      ),
+      screenRoute: FlowChartScreen(),
     ),
     BottomNavigationRoute(screenRoute: AdmissionAgreementsScreen()),
   ];
@@ -65,3 +60,9 @@ class _AppNavigationBarState extends State<AppNavigationBar> {
     );
   }
 }
+
+const placeholder = Center(
+    child: Text(
+  'Future Protocol\'s Screen',
+  textAlign: TextAlign.center,
+));
