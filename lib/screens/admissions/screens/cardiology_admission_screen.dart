@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 
-import '../../constants.dart';
-import 'markdown/cardiology_agreement.dart';
+import '../../../constants.dart';
+import '../markdown/cardiology_agreement.dart';
 
 class CardiologyAdmissionScreen extends StatelessWidget {
   const CardiologyAdmissionScreen({

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 
-import '../../constants.dart';
-import 'markdown/gastroenterology_agreement.dart';
+import '../../../constants.dart';
+import '../markdown/gastroenterology_agreement.dart';
 
 class GIAdmissionScreen extends StatelessWidget {
   const GIAdmissionScreen({

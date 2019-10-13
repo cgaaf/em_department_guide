@@ -1,11 +1,10 @@
-import 'package:em_department_guide/screens/admission_agreements/gi_admission_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import 'admission_agreements/cardiology_admission_screen.dart';
-import 'admission_agreements/gi_admission_screen.dart';
+import 'screens/gi_admission_screen.dart';
+import 'screens/cardiology_admission_screen.dart';
 
-class AdmissionAgreementsScreen extends StatelessWidget {
+class AdmissionsNavigationScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Navigator(
       onGenerateRoute: (RouteSettings settings) {
