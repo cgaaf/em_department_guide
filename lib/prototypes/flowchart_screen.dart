@@ -14,10 +14,7 @@ class _FlowChartScreenState extends State<FlowChartScreen> {
 
   @override
   Widget build(BuildContext context) {
-    List textList = fcb.output;
-
-    print(textList);
-
+    List _textList = fcb.output;
     List<Widget> _buildButtonOptions() {
       if (fcb.options.length == 1) {
         return [
@@ -67,44 +64,48 @@ class _FlowChartScreenState extends State<FlowChartScreen> {
       }
     }
 
-    return CustomScrollView(
-      slivers: <Widget>[
-        SliverAppBar(
-          title: Text('Flow Chart Prototyping'),
-        ),
-        SliverPadding(
-          padding: EdgeInsets.symmetric(horizontal: 15),
-          sliver: SliverList(
-            delegate: SliverChildBuilderDelegate((context, index) {
-              return Column(
-                children: <Widget>[
-                  Text(
-                    _answerList[index],
-                    style: TextStyle(color: Colors.black54),
-                  ),
-                  Container(
-                    margin: EdgeInsets.symmetric(vertical: 10),
-                    color: kPrimaryColor,
-                    padding: EdgeInsets.all(10),
-                    child: Text(
-                      textList[index],
-                      style: TextStyle(fontSize: 20, color: Colors.white),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                ],
-              );
-            }, childCount: textList.length),
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 20.0),
+      child: Column(
+        children: <Widget>[
+          Expanded(
+              flex: 5,
+              child: ListView.builder(
+                reverse: true,
+                itemCount: _textList.length,
+                itemBuilder: (context, index) {
+                  return Column(
+                    children: <Widget>[
+                      Text(
+                        _answerList.reversed.toList()[index],
+                        style: TextStyle(color: Colors.black54),
+                      ),
+                      Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: kPrimaryColor,
+                        ),
+                        margin: EdgeInsets.symmetric(vertical: 10),
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                        child: Text(
+                          _textList.reversed.toList()[index],
+                          style: TextStyle(fontSize: 20, color: Colors.white),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                    ],
+                  );
+                },
+              )),
+          Expanded(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: _buildButtonOptions(),
+            ),
           ),
-        ),
-        SliverList(
-            delegate: SliverChildListDelegate([
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: _buildButtonOptions(),
-          )
-        ]))
-      ],
+        ],
+      ),
     );
   }
 }
@@ -121,10 +122,10 @@ class OptionButton extends StatelessWidget {
       child: Text(title,
           style: TextStyle(
             fontSize: 15,
-            color: Colors.white,
+            color: kPrimaryColor,
           )),
       onPressed: onPressed,
-      color: kPrimaryColor,
+      color: kSecondaryColor,
     );
   }
 }

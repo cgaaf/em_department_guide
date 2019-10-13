@@ -9,4 +9,7 @@ final kMarkDownStyles = MarkdownStyleSheet(
   listIndent: 25.0,
 );
 
-final kPrimaryColor = Color(0xffD02565);
+//final kPrimaryColor = Color(0xffD02565);
+//final kSecondaryColor = Color(0xffF78764);
+final kPrimaryColor = Color(0xff758BFD);
+final kSecondaryColor = Color(0xffF1F2F6);

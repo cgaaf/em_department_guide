@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'constants.dart';
-import 'screens/app_navigation_screen.dart';
+import 'screens/indexed_navigation_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: kPrimaryColor,
       ),
-      home: SafeArea(child: AppNavigationBar()),
+      home: SafeArea(child: IndexedNavigation()),
     );
   }
 }
