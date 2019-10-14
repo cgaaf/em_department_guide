@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 
 import 'package:em_department_guide/screens/protocols/flowchart_screen.dart';
 import 'admissions/admissions_navigation_screen.dart';
-import '../models/destination.dart';
+import '../models/navigation_destination.dart';
 
-final List<Destination> allDestinations = <Destination>[
-  Destination(
+final List<NavigationDestination> allDestinations = <NavigationDestination>[
+  NavigationDestination(
       title: 'Phone', icon: Icons.phone, screen: PhoneNumberNavigationScreen()),
-  Destination(
+  NavigationDestination(
       title: 'Protocols', icon: Icons.table_chart, screen: FlowChartScreen()),
-  Destination(
+  NavigationDestination(
       title: 'Admissions',
       icon: Icons.airline_seat_individual_suite,
       screen: AdmissionsNavigationScreen())
@@ -38,7 +38,8 @@ class _IndexedNavigationState extends State<IndexedNavigation> {
         top: false,
         child: IndexedStack(
           index: _currentIndex,
-          children: allDestinations.map<Widget>((Destination destination) {
+          children:
+              allDestinations.map<Widget>((NavigationDestination destination) {
             return destination.screen;
           }).toList(),
         ),
@@ -47,7 +48,7 @@ class _IndexedNavigationState extends State<IndexedNavigation> {
         currentIndex: _currentIndex,
         onTap: _onItemTapped,
         items: allDestinations
-            .map<BottomNavigationBarItem>((Destination destination) {
+            .map<BottomNavigationBarItem>((NavigationDestination destination) {
           return BottomNavigationBarItem(
             icon: Icon(destination.icon),
             title: Text(destination.title),

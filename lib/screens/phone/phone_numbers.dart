@@ -1,4 +1,4 @@
-import '../../models/phone_number.dart';
+import 'phone_number.dart';
 
 List<PhoneNumber> greenvilleList = [
   PhoneNumber(
@@ -33,7 +33,7 @@ List<PhoneNumber> greenvilleList = [
       locationSubtext: 'Radiologist #3',
       phoneNumber: '864-455-3631'),
   PhoneNumber(
-    location: 'GMH CT Scan',
+    location: 'CT',
     phoneNumber: '864-455-7474',
   ),
   PhoneNumber(

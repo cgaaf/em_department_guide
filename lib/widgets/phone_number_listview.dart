@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-import '../models/phone_number.dart';
+import '../screens/phone/phone_number.dart';
 
 class PhoneNumberListView extends StatelessWidget {
   final List<PhoneNumber> phoneNumbers;

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class Destination {
+class NavigationDestination {
   final String title;
   final IconData icon;
   final Widget screen;
 
-  Destination({
-    this.title,
+  NavigationDestination({
+    @required this.title,
     this.icon,
-    this.screen,
+    @required this.screen,
   });
 }
