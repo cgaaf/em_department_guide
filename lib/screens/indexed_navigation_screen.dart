@@ -5,16 +5,29 @@ import 'package:flutter/material.dart';
 import 'package:em_department_guide/screens/protocols/flowchart_screen.dart';
 import 'admissions/admissions_navigation_screen.dart';
 import '../models/navigation_destination.dart';
+import '../screens/dotphrases/dot_phrase_navigation_screen.dart';
 
 final List<NavigationDestination> allDestinations = <NavigationDestination>[
   NavigationDestination(
-      title: 'Phone', icon: Icons.phone, screen: PhoneNumberNavigationScreen()),
+    title: 'Phone',
+    icon: Icons.phone,
+    screen: PhoneNumberNavigationScreen(),
+  ),
   NavigationDestination(
-      title: 'Protocols', icon: Icons.table_chart, screen: FlowChartScreen()),
+    title: 'Protocols',
+    icon: Icons.table_chart,
+    screen: FlowChartScreen(),
+  ),
   NavigationDestination(
-      title: 'Admissions',
-      icon: Icons.airline_seat_individual_suite,
-      screen: AdmissionsNavigationScreen())
+    title: 'Admissions',
+    icon: Icons.airline_seat_individual_suite,
+    screen: AdmissionsNavigationScreen(),
+  ),
+  NavigationDestination(
+    title: 'Dot Phrases',
+    icon: Icons.alternate_email,
+    screen: DotPhraseNavigationScreen(),
+  ),
 ];
 
 class IndexedNavigation extends StatefulWidget {
@@ -50,9 +63,15 @@ class _IndexedNavigationState extends State<IndexedNavigation> {
         items: allDestinations
             .map<BottomNavigationBarItem>((NavigationDestination destination) {
           return BottomNavigationBarItem(
-            icon: Icon(destination.icon),
-            title: Text(destination.title),
-            backgroundColor: kPrimaryColor,
+            icon: Icon(
+              destination.icon,
+              color: kPrimaryColor,
+            ),
+            title: Text(
+              destination.title,
+              style: TextStyle(color: kPrimaryColor),
+            ),
+            backgroundColor: Colors.white,
           );
         }).toList(),
       ),
