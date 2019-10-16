@@ -1,4 +1,5 @@
-import 'phone_number.dart';
+import '../models/phone_book.dart';
+import '../models/phone_number.dart';
 
 List<PhoneNumber> greenvilleList = [
   PhoneNumber(
@@ -57,4 +58,14 @@ List<PhoneNumber> greerList = [
   PhoneNumber(location: 'Ultrasound', phoneNumber: '864-797-8666'),
   PhoneNumber(location: 'MRI', phoneNumber: '864-797-8647'),
   PhoneNumber(location: 'Lab', phoneNumber: '864-797-8566')
+];
+
+final List<PhoneBook> phoneBookLocations = [
+  PhoneBook(location: 'Greenville Memorial', numberList: greenvilleList),
+  PhoneBook(location: 'Greer Memorial', numberList: greerList),
+  PhoneBook(location: 'Hilcrest Memorial', numberList: greenvilleList),
+  PhoneBook(location: 'Baptist Easley', numberList: greerList),
+  PhoneBook(location: 'North Greenville', numberList: greenvilleList),
+  PhoneBook(location: 'Oconee Memorial', numberList: greerList),
+  PhoneBook(location: 'Laurens County Memorial', numberList: greenvilleList)
 ];

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class CategoryListView extends StatelessWidget {
+class NavigatorListView extends StatelessWidget {
   final AppBar appBar;
   final IndexedWidgetBuilder itemBuilder;
   final int itemCount;
 
-  CategoryListView({
+  NavigatorListView({
     this.appBar,
     @required this.itemBuilder,
     @required this.itemCount,

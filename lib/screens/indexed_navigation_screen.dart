@@ -1,17 +1,17 @@
 import 'package:em_department_guide/constants.dart';
-import 'package:em_department_guide/screens/phone/phone_number_navigation_screen.dart';
+import 'package:em_department_guide/screens/phone/widgets/phone_navigation.dart';
+import 'package:em_department_guide/screens/protocols/flowchart_screen.dart';
 import 'package:flutter/material.dart';
 
-import 'package:em_department_guide/screens/protocols/flowchart_screen.dart';
-import 'admissions/admissions_navigation_screen.dart';
 import '../models/navigation_destination.dart';
-import '../screens/dotphrases/dot_phrase_navigation_screen.dart';
+import 'admissions/admissions_navigation_screen.dart';
+import 'dotphrases/widgets/dot_phrase_navigation.dart';
 
 final List<NavigationDestination> allDestinations = <NavigationDestination>[
   NavigationDestination(
     title: 'Phone',
     icon: Icons.phone,
-    screen: PhoneNumberNavigationScreen(),
+    screen: PhoneNavigation(),
   ),
   NavigationDestination(
     title: 'Protocols',
@@ -26,7 +26,7 @@ final List<NavigationDestination> allDestinations = <NavigationDestination>[
   NavigationDestination(
     title: 'Dot Phrases',
     icon: Icons.alternate_email,
-    screen: DotPhraseNavigationScreen(),
+    screen: DotPhraseNavigation(),
   ),
 ];
 

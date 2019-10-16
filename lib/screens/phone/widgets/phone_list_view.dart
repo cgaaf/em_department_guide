@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'phone_number.dart';
 
-class PhoneNumberListView extends StatelessWidget {
+import '../models/phone_number.dart';
+
+class PhoneListView extends StatelessWidget {
   final List<PhoneNumber> phoneNumbers;
   final String title;
 
-  PhoneNumberListView({this.phoneNumbers, this.title});
+  PhoneListView({this.phoneNumbers, this.title});
 
   _dialNumber(String phoneNumber) async {
     String url = 'tel:$phoneNumber';
