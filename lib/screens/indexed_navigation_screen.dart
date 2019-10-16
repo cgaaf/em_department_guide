@@ -1,6 +1,7 @@
 import 'package:em_department_guide/constants.dart';
 import 'package:em_department_guide/screens/phone/widgets/phone_navigation.dart';
-import 'package:em_department_guide/screens/protocols/flowchart_screen.dart';
+import 'package:em_department_guide/screens/protocols/widgets/protocol_navigation.dart';
+import 'package:em_department_guide/widgets/navigation_stack.dart';
 import 'package:flutter/material.dart';
 
 import '../models/navigation_destination.dart';
@@ -16,7 +17,7 @@ final List<NavigationDestination> allDestinations = <NavigationDestination>[
   NavigationDestination(
     title: 'Protocols',
     icon: Icons.table_chart,
-    screen: FlowChartScreen(),
+    screen: ProtocolNavigation(),
   ),
   NavigationDestination(
     title: 'Admissions',
@@ -49,12 +50,10 @@ class _IndexedNavigationState extends State<IndexedNavigation> {
     return Scaffold(
       body: SafeArea(
         top: false,
-        child: IndexedStack(
-          index: _currentIndex,
-          children:
-              allDestinations.map<Widget>((NavigationDestination destination) {
-            return destination.screen;
-          }).toList(),
+        // Use NavigationStack() if state preservation during navigation is desired.
+        child: NavigationStack(
+          currentIndex: _currentIndex,
+          destinations: allDestinations,
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
