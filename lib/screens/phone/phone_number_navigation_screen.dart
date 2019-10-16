@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'phone_numbers.dart';
 import 'phone_book.dart';
+import '../../widgets/category_list_view.dart';
 
 final List<PhoneBook> phoneBookLocations = [
   PhoneBook(location: 'Greenville Memorial', numberList: greenvilleList),
@@ -17,40 +18,22 @@ final List<PhoneBook> phoneBookLocations = [
 class PhoneNumberNavigationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Navigator(
-      onGenerateRoute: (RouteSettings settings) => MaterialPageRoute(
-        builder: (BuildContext context) => PhoneNumberNavigator(),
+    return CategoryListView(
+      appBar: AppBar(title: Text('Phone Numbers')),
+      itemBuilder: (context, index) => ListTile(
+        leading: Icon(FontAwesomeIcons.hospital),
+        title: Text(phoneBookLocations[index].location),
+        onTap: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => PhoneNumberListView(
+                        title: phoneBookLocations[index].location,
+                        phoneNumbers: phoneBookLocations[index].numberList,
+                      )));
+        },
       ),
-    );
-  }
-}
-
-class PhoneNumberNavigator extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Phone Numbers'),
-      ),
-      body: ListView.separated(
-        itemBuilder: (context, index) => ListTile(
-          leading: Icon(FontAwesomeIcons.hospital),
-          title: Text(phoneBookLocations[index].location),
-          onTap: () {
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => PhoneNumberListView(
-                          title: phoneBookLocations[index].location,
-                          phoneNumbers: phoneBookLocations[index].numberList,
-                        )));
-          },
-        ),
-        separatorBuilder: (context, index) => Divider(
-          height: 1.0,
-        ),
-        itemCount: phoneBookLocations.length,
-      ),
+      itemCount: phoneBookLocations.length,
     );
   }
 }

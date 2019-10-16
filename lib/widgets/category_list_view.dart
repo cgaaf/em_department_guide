@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
 class CategoryListView extends StatelessWidget {
-  final String title;
+  final AppBar appBar;
   final IndexedWidgetBuilder itemBuilder;
   final int itemCount;
 
   CategoryListView({
-    this.title,
+    this.appBar,
     @required this.itemBuilder,
     @required this.itemCount,
   });
@@ -16,10 +16,7 @@ class CategoryListView extends StatelessWidget {
     return Navigator(
       onGenerateRoute: (RouteSettings settings) => MaterialPageRoute(
           builder: (BuildContext context) => Scaffold(
-                appBar: this.title ??
-                    AppBar(
-                      title: Text(title),
-                    ),
+                appBar: appBar,
                 body: ListView.separated(
                   itemBuilder: itemBuilder,
                   separatorBuilder: (context, index) => Divider(
