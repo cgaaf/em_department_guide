@@ -2,22 +2,26 @@ import 'package:em_department_guide/constants.dart';
 import 'package:flutter/material.dart';
 
 class DotPhrase {
+  final String title;
   final String phrase;
   final String description;
 
-  DotPhrase({this.phrase, this.description});
+  DotPhrase({this.title, this.phrase, this.description});
 }
 
 List<DotPhrase> dotPhraseList = [
   DotPhrase(
+      title: 'MDM - HEART score',
       phrase: '.MDMHEARTSCORE',
       description:
           'Documents heart score and disposition plan based on result'),
   DotPhrase(
+      title: 'MDM - PECARN decision rule',
       phrase: '.MDMPECARN',
       description:
           'Documents PECARN Head CT decision rule when evaluated pediatric head trauma'),
   DotPhrase(
+      title: 'SDM - Defer Abd/Pelvis CT',
       phrase: '.SDMABDOMINALPAINNOCT',
       description:
           'Documents shared decision making conversation regarding Abdomen/Pelvis CT in an otherwise low risk abdominal pain presentation'),
@@ -32,7 +36,7 @@ class DotPhraseNavigationScreen extends StatelessWidget {
         ),
         body: ListView.separated(
             itemBuilder: (_, index) => ListTile(
-                  title: Text(dotPhraseList[index].phrase),
+                  title: Text(dotPhraseList[index].title),
                   onTap: () {
                     showDialog(
                         context: context,

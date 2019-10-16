@@ -1,4 +1,4 @@
-import 'package:em_department_guide/widgets/phone_number_listview.dart';
+import 'package:em_department_guide/screens/phone/phone_number_listview.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'phone_numbers.dart';
