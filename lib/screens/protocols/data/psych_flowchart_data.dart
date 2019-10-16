@@ -1,8 +1,9 @@
-class FlowChartBrain {
-  List get options => _currentOptions;
-  List get output => _chosenFlow;
+import '../models/flow_input.dart';
+import '../models/flowchart_item.dart';
 
-  static List<FlowChartItem> _flowOptions = [
+FlowInput psychFlowInput = FlowInput(
+  title: 'ITC/White Paper Flow',
+  flowOptions: <FlowChartItem>[
     FlowChartItem(
         'Adult ED patient presents with, or manifests, and acute psychiatric or substance-related condition',
         [1]), // index 0
@@ -56,29 +57,5 @@ class FlowChartBrain {
     FlowChartItem(
         'ED Psychiatrist, once on duty, will: Evaluate patient, determine disposition, and (if applicable) complete part 2 of white papers.',
         []) // 22
-  ];
-
-  List _chosenFlow = [_flowOptions[0].text];
-  List _currentOptions = _flowOptions[0].options;
-
-  void addToChosenFlow(List optionList, int option) {
-    int chosenItemIndex = optionList[option];
-
-    FlowChartItem chosenItem = _flowOptions[chosenItemIndex];
-
-    _chosenFlow.add(chosenItem.text);
-    _currentOptions = chosenItem.options;
-  }
-
-  void reset() {
-    _chosenFlow = [_flowOptions[0].text];
-    _currentOptions = _flowOptions[0].options;
-  }
-}
-
-class FlowChartItem {
-  final String text;
-  final List options;
-
-  FlowChartItem(this.text, this.options);
-}
+  ],
+);

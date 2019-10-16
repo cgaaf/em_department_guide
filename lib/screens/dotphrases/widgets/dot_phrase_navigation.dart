@@ -10,7 +10,7 @@ class DotPhraseNavigation extends StatelessWidget {
     return NavigatorListView(
       appBar: AppBar(title: Text('Dot Phrase Categories')),
       itemCount: dotPhraseCategories.length,
-      itemBuilder: (_, index) => ListTile(
+      itemBuilder: (context, index) => ListTile(
         title: Text(dotPhraseCategories[index].type),
         onTap: () {
           Navigator.push(
